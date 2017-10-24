@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types';
 import React from 'react';
+import { Form, Input, Button } from 'semantic-ui-react'
 
 export default class HelloWorld extends React.Component {
   static propTypes = {
@@ -32,12 +33,20 @@ export default class HelloWorld extends React.Component {
           <label htmlFor="name">
             Say hello to:
           </label>
-          <input
+          <Input
+            placeholder="Type here..."
             id="name"
             type="text"
             value={this.state.name}
             onChange={(e) => this.updateName(e.target.value)}
           />
+          <Button
+             color='red'
+             content='Like'
+             icon='heart'
+             label={{ basic: true, color: 'red', pointing: 'left', content: '2,048' }}
+           />
+           <Form.Input label='Enter Password' type='password' />
         </form>
       </div>
     );
