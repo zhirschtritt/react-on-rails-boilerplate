@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import React from 'react';
-import { Form, Input, Button } from 'semantic-ui-react'
+import { Form, Input, Button, Dropdown } from 'semantic-ui-react'
 
 export default class HelloWorld extends React.Component {
   static propTypes = {
@@ -23,6 +23,7 @@ export default class HelloWorld extends React.Component {
   };
 
   render() {
+    const stateOptions = [ { key: 'AL', value: 'AL', text: 'Alabama' },  { key: 'AL', value: 'AL', text: 'Alabama' }, ]
     return (
       <div>
         <h3>
@@ -40,6 +41,7 @@ export default class HelloWorld extends React.Component {
             value={this.state.name}
             onChange={(e) => this.updateName(e.target.value)}
           />
+
           <Button
              color='red'
              content='Like'
@@ -47,6 +49,7 @@ export default class HelloWorld extends React.Component {
              label={{ basic: true, color: 'red', pointing: 'left', content: '2,048' }}
            />
            <Form.Input label='Enter Password' type='password' />
+           <Dropdown placeholder='State' search selection options={stateOptions} />
         </form>
       </div>
     );
